@@ -2,7 +2,7 @@ package com.gildedrose;
 
 import org.junit.jupiter.api.Test;
 
-import static com.gildedrose.ItemUtils.*;
+import static com.gildedrose.utils.ItemUtils.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ItemUtilsTest {

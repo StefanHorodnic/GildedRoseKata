@@ -1,17 +1,23 @@
-package com.gildedrose;
+package com.gildedrose.utils;
+
+import com.gildedrose.Item;
 
 public class ItemUtils {
 
+    public static boolean isSellDatePassed(Item item) {
+        return item.sellIn <= 0;
+    }
+
     public static boolean isAgedBrie(Item item) {
-        return isItemByType("Aged Brie", item);
+        return isTypeByName("Aged Brie", item);
     }
 
     public static boolean isBackstagePasses(Item item) {
-        return isItemByType("Backstage passes", item);
+        return isTypeByName("Backstage passes", item);
     }
 
     public static boolean isLegendary(Item item) {
-        return isItemByType("Sulfuras", item);
+        return isTypeByName("Sulfuras", item);
     }
 
     public static boolean isNotAgedBrie(Item item) {
@@ -26,7 +32,7 @@ public class ItemUtils {
         return !isLegendary(item);
     }
 
-    private static boolean isItemByType(String type, Item item) {
+    private static boolean isTypeByName(String type, Item item) {
         String itemName = item.name.toLowerCase();
         return itemName.contains(type.toLowerCase());
     }

@@ -1,4 +1,7 @@
-package com.gildedrose;
+package com.gildedrose.service.items;
+
+import com.gildedrose.Item;
+import com.gildedrose.service.item.ItemService;
 
 public class ItemsService {
     ItemService itemService;
