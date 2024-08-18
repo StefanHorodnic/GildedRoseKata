@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class GildedRoseTest {
 
     @Test
-    void GivenFooItem_WhenUpdateQuality_QualityAndSellInDecreesByOne() {
+    void GivenFooItem_WhenUpdateQuality_QualityAndSellInDecreaseByOne() {
         Item[] items = new Item[]{new Item("foo", 2, 3)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
