@@ -71,4 +71,52 @@ class GildedRoseTest {
             () -> assertEquals(3, item.sellIn)
         );
     }
+
+    @Test
+    void GivenBackstagePassesItemWithSellInLessThenTenAndMoreThenFive_WhenUpdateQuality_QualityIncreasesByTwo() {
+        Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 9, 10)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(12, items[0].quality);
+    }
+
+    @Test
+    void GivenBackstagePassesItemWithSellInEqualToTen_WhenUpdateQuality_QualityIncreasesByTwo() {
+        Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 10, 10)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(12, items[0].quality);
+    }
+
+    @Test
+    void GivenBackstagePassesItemWithSellInLessThenFiveAndMoreThenZero_WhenUpdateQuality_QualityIncreasesByThree() {
+        Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 4, 10)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(13, items[0].quality);
+    }
+
+    @Test
+    void GivenBackstagePassesItemWithSellInEqualToFive_WhenUpdateQuality_QualityIncreasesByThree() {
+        Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 5, 10)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(13, items[0].quality);
+    }
+
+    @Test
+    void GivenBackstagePassesItemWithSellInIsZero_WhenUpdateQuality_QualityIsZero() {
+        Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(0, items[0].quality);
+    }
+
+    @Test
+    void GivenBackstagePassesItemWithSellInLessThenZero_WhenUpdateQuality_QualityIsZero() {
+        Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", -5, 10)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(0, items[0].quality);
+    }
 }
