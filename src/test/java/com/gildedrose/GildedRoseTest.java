@@ -18,4 +18,13 @@ class GildedRoseTest {
             () -> assertEquals(2, item.quality)
         );
     }
+
+    @Test
+    void GivenFooItemAfterSellDate_WhenUpdateQuality_QualityDecreaseByTwo() {
+        Item[] items = new Item[]{new Item("foo", 0, 3)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        Item item = items[0];
+        assertEquals(1, item.quality);
+    }
 }
