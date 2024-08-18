@@ -27,4 +27,13 @@ class GildedRoseTest {
         Item item = items[0];
         assertEquals(1, item.quality);
     }
+
+    @Test
+    void GivenFooItem_WhenUpdateQuality_QualityIsNeverNegative() {
+        Item[] items = new Item[]{new Item("foo", 0, 0)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        Item item = items[0];
+        assertEquals(0, item.quality);
+    }
 }
