@@ -1,10 +1,10 @@
 package com.gildedrose.service.item;
 
 import com.gildedrose.Item;
-import com.gildedrose.service.quality.provider.QualityServiceProvider;
+import com.gildedrose.service.quality.QualityServiceProvider;
 import com.gildedrose.service.quality.QualityService;
 import com.gildedrose.service.sellin.SellInService;
-import com.gildedrose.service.sellin.provider.SellInServiceProvider;
+import com.gildedrose.service.sellin.SellInServiceProvider;
 
 public class ItemService {
 
@@ -14,8 +14,8 @@ public class ItemService {
     }
 
     private void updateSellIn(Item item) {
-        SellInService service = SellInServiceProvider.get(item);
-        service.updateSellIn(item);
+        SellInService sellInService = SellInServiceProvider.get(item);
+        sellInService.updateSellIn(item);
     }
 
     private void updateQuality(Item item) {

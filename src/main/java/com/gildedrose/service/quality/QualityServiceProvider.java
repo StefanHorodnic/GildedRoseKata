@@ -1,4 +1,4 @@
-package com.gildedrose.service.quality.provider;
+package com.gildedrose.service.quality;
 
 import com.gildedrose.Item;
 import com.gildedrose.service.quality.*;

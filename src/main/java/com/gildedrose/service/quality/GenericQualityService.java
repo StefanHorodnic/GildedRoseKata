@@ -3,7 +3,7 @@ package com.gildedrose.service.quality;
 import com.gildedrose.Item;
 import com.gildedrose.utils.ItemUtils;
 
-import static com.gildedrose.service.quality.QualityServiceCommon.adjustIfUnderLowerLimit;
+import static com.gildedrose.service.quality.QualityServiceUtils.adjustIfUnderLowerLimit;
 
 public class GenericQualityService implements QualityService {
     @Override

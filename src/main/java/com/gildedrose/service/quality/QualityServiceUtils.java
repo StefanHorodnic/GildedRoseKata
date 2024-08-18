@@ -3,10 +3,16 @@ package com.gildedrose.service.quality;
 import com.gildedrose.Item;
 import com.gildedrose.utils.ItemConstants;
 
-public class QualityServiceCommon {
+public class QualityServiceUtils {
     public static void adjustIfUnderLowerLimit(Item item) {
         if (item.quality < ItemConstants.QUALITY.LOWER_LIMIT) {
             item.quality = 0;
+        }
+    }
+
+    public static void adjustIfOverUpperLimit(Item agedBrie) {
+        if (agedBrie.quality > ItemConstants.QUALITY.UPPER_LIMIT) {
+            agedBrie.quality = 50;
         }
     }
 }
