@@ -9,6 +9,6 @@ public class LegendarySellInService implements SellInService {
      * @param item
      */
     @Override
-    public void updateSellIn(Item item) {
+    public void update(Item item) {
     }
 }

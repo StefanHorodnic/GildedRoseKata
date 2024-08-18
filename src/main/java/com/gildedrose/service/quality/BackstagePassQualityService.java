@@ -5,7 +5,7 @@ import com.gildedrose.utils.ItemConstants;
 
 public class BackstagePassQualityService implements QualityService {
     @Override
-    public void updateQuality(Item backstagePass) {
+    public void update(Item backstagePass) {
         updateBasedOnSellIn(backstagePass);
         updateBasedOnQuality(backstagePass);
     }
@@ -14,10 +14,14 @@ public class BackstagePassQualityService implements QualityService {
         if (item.sellIn <= 0) {
             item.quality = 0;
         } else {
-            item.quality++;
-            incrementIfBelowFirstThreshold(item);
-            incrementIfBelowSecondThreshold(item);
+            increment(item);
         }
+    }
+
+    private void increment(Item item) {
+        item.quality++;
+        incrementIfBelowFirstThreshold(item);
+        incrementIfBelowSecondThreshold(item);
     }
 
     private void incrementIfBelowFirstThreshold(Item item) {

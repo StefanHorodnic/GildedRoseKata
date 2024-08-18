@@ -6,7 +6,7 @@ import static com.gildedrose.service.quality.QualityServiceUtils.adjustIfOverUpp
 
 public class AgedBrieQualityService implements QualityService {
     @Override
-    public void updateQuality(Item agedBrie) {
+    public void update(Item agedBrie) {
         agedBrie.quality++;
         adjustIfOverUpperLimit(agedBrie);
     }

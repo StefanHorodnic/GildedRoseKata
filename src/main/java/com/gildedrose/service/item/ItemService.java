@@ -15,11 +15,11 @@ public class ItemService {
 
     private void updateSellIn(Item item) {
         SellInService sellInService = SellInServiceProvider.get(item);
-        sellInService.updateSellIn(item);
+        sellInService.update(item);
     }
 
     private void updateQuality(Item item) {
         QualityService qualityService = QualityServiceProvider.get(item);
-        qualityService.updateQuality(item);
+        qualityService.update(item);
     }
 }

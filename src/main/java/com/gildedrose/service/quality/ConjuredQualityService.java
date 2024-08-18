@@ -7,7 +7,7 @@ import static com.gildedrose.service.quality.QualityServiceUtils.adjustIfUnderLo
 
 public class ConjuredQualityService implements QualityService {
     @Override
-    public void updateQuality(Item item) {
+    public void update(Item item) {
         item.quality = item.quality - 2;
         decrementIfSellDatePassed(item);
         adjustIfUnderLowerLimit(item);

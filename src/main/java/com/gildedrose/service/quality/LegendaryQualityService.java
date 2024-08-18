@@ -11,6 +11,6 @@ public class LegendaryQualityService implements QualityService {
      * @param item
      */
     @Override
-    public void updateQuality(Item item) {
+    public void update(Item item) {
     }
 }
