@@ -59,4 +59,16 @@ class GildedRoseTest {
             () -> assertEquals(50, items[1].quality)
         );
     }
+
+    @Test
+    void GivenLegendaryItem_WhenUpdateQuality_QualityAndSellInDoNotAlter() {
+        Item[] items = new Item[]{new Item("Sulfuras, Hand of Ragnaros", 3, 80)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        Item item = items[0];
+        Assertions.assertAll(
+            () -> assertEquals(80, item.quality),
+            () -> assertEquals(3, item.sellIn)
+        );
+    }
 }
