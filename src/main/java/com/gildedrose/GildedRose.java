@@ -21,7 +21,7 @@ class GildedRose {
     }
 
     private void updateItemQuality(Item item) {
-        if (isNotAgedBrie(item) && isNotBackstagePass(item)) {
+        if (isNotAgedBrie(item) && isNotBackstagePasses(item)) {
             if (item.quality > 0 && isNotLegendary(item)) {
                 item.quality = item.quality - 1;
             }
@@ -29,7 +29,7 @@ class GildedRose {
             if (item.quality < 50) {
                 item.quality = item.quality + 1;
 
-                if (isBackstagePass(item)) {
+                if (isBackstagePasses(item)) {
                     if (item.sellIn < 10) {
                         item.quality = item.quality + 1;
                     }
@@ -43,7 +43,7 @@ class GildedRose {
 
         if (item.sellIn < 0) {
             if (!item.name.equals("Aged Brie")) {
-                if (isNotBackstagePass(item)) {
+                if (isNotBackstagePasses(item)) {
                     if (item.quality > 0 && isNotLegendary(item)) {
                         item.quality = item.quality - 1;
                     }

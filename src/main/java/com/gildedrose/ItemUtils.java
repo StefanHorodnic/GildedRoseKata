@@ -6,7 +6,7 @@ public class ItemUtils {
         return isItemByType("Aged Brie", item);
     }
 
-    public static boolean isBackstagePass(Item item) {
+    public static boolean isBackstagePasses(Item item) {
         return isItemByType("Backstage passes", item);
     }
 
@@ -18,8 +18,8 @@ public class ItemUtils {
         return !isAgedBrie(item);
     }
 
-    public static boolean isNotBackstagePass(Item item) {
-        return !isBackstagePass(item);
+    public static boolean isNotBackstagePasses(Item item) {
+        return !isBackstagePasses(item);
     }
 
     public static boolean isNotLegendary(Item item) {
