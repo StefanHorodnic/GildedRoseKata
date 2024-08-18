@@ -1,9 +1,6 @@
 package com.gildedrose.service.sellin;
 
 import com.gildedrose.Item;
-import com.gildedrose.service.sellin.GenericSellInService;
-import com.gildedrose.service.sellin.LegendarySellInService;
-import com.gildedrose.service.sellin.SellInService;
 
 import static com.gildedrose.utils.ItemUtils.*;
 

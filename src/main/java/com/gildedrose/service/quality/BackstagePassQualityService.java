@@ -1,7 +1,9 @@
 package com.gildedrose.service.quality;
 
 import com.gildedrose.Item;
-import com.gildedrose.utils.ItemConstants;
+
+import static com.gildedrose.service.quality.QualityServiceUtils.adjustIfOverUpperLimit;
+import static com.gildedrose.service.quality.QualityServiceUtils.adjustIfUnderLowerLimit;
 
 public class BackstagePassQualityService implements QualityService {
     @Override
@@ -37,11 +39,7 @@ public class BackstagePassQualityService implements QualityService {
     }
 
     private void updateBasedOnQuality(Item item) {
-        if (item.quality > ItemConstants.QUALITY.UPPER_LIMIT) {
-            item.quality = ItemConstants.QUALITY.UPPER_LIMIT;
-        }
-        if (item.quality < ItemConstants.QUALITY.LOWER_LIMIT) {
-            item.quality = 0;
-        }
+        adjustIfUnderLowerLimit(item);
+        adjustIfOverUpperLimit(item);
     }
 }
