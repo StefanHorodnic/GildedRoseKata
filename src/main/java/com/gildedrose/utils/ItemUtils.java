@@ -20,16 +20,8 @@ public class ItemUtils {
         return isTypeByName("Sulfuras", item);
     }
 
-    public static boolean isNotAgedBrie(Item item) {
-        return !isAgedBrie(item);
-    }
-
-    public static boolean isNotBackstagePasses(Item item) {
-        return !isBackstagePasses(item);
-    }
-
-    public static boolean isNotLegendary(Item item) {
-        return !isLegendary(item);
+    public static boolean isConjured(Item item) {
+        return isTypeByName("Conjured", item);
     }
 
     private static boolean isTypeByName(String type, Item item) {

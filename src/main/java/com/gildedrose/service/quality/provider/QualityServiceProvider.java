@@ -16,6 +16,9 @@ public class QualityServiceProvider {
         if (isLegendary(item)) {
             return new LegendaryQualityService();
         }
+        if (isConjured(item)) {
+            return new ConjuredQualityService();
+        }
         return new GenericQualityService();
     }
 }

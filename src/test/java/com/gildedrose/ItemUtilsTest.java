@@ -47,39 +47,13 @@ class ItemUtilsTest {
     }
 
     @Test
-    void GivenItemNotOfTypeAgedBrie_WhenIsNotAgedBrieIsCalled_ReturnsTrue() {
-        Item item = new Item("Foo Brie", 2, 3);
-        Item item2 = new Item("aged Foo", 2, 3);
-        Item item3 = new Item("foo", 2, 3);
+    void GivenItemOfTypeConjured_WhenIsConjuredIsCalled_ReturnsTrue() {
+        Item item = new Item("conjured", 2, 3);
+        Item item2 = new Item("Conjured", 2, 3);
 
         assertAll(
-            () -> assertTrue(isNotAgedBrie(item)),
-            () -> assertTrue(isNotAgedBrie(item2)),
-            () -> assertTrue(isNotAgedBrie(item3))
-        );
-    }
-
-    @Test
-    void GivenItemNotOfTypeBackstagePasses_WhenIsNotBackstagePassIsCalled_ReturnsTrue() {
-        Item item = new Item("Foo passes", 2, 3);
-        Item item2 = new Item("Foo", 2, 3);
-        Item item3 = new Item("Backstage", 2, 3);
-
-        assertAll(
-            () -> assertTrue(isNotBackstagePasses(item)),
-            () -> assertTrue(isNotBackstagePasses(item2)),
-            () -> assertTrue(isNotBackstagePasses(item3))
-        );
-    }
-
-    @Test
-    void GivenItemNotOfTypeLegendary_WhenIsNotLegendaryIsCalled_ReturnsTrue() {
-        Item item = new Item("fooo", 2, 3);
-        Item item2 = new Item("Foo furas", 2, 3);
-
-        assertAll(
-            () -> assertTrue(isNotLegendary(item)),
-            () -> assertTrue(isNotLegendary(item2))
+            () -> assertTrue(isConjured(item)),
+            () -> assertTrue(isConjured(item2))
         );
     }
 }
