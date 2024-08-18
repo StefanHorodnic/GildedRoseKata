@@ -45,4 +45,18 @@ class GildedRoseTest {
         Item item = items[0];
         assertEquals(6, item.quality);
     }
+
+    @Test
+    void GivenQualityIncreasingItem_WhenUpdateQuality_QualityDoesNotExceedFifty() {
+        Item[] items = new Item[]{
+            new Item("Aged Brie", 3, 50),
+            new Item("Backstage passes to a TAFKAL80ETC concert", 3, 50)
+        };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        Assertions.assertAll(
+            () -> assertEquals(50, items[0].quality),
+            () -> assertEquals(50, items[1].quality)
+        );
+    }
 }
